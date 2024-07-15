@@ -8,9 +8,9 @@ const User = require('../models/user.js');
 
 router.get('/', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
+    console.log
     res.render('books/index.ejs', {
         books: currentUser.books,
-        user: currentUser,
     });
 });
 

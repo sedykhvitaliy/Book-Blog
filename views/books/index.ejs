@@ -11,7 +11,7 @@
     <nav class="links">
       <a href="/home">Home</a>
       <% if (user) { %>
-        <a href="/books">View All Books</a>
+        <a href="/users/:userId/books">View All Books</a>
         <a href="/users/<%= user._id %>/books">My Books</a>
         <a href="/auth/sign-out">Sign Out</a>
       <% } else { %>
@@ -26,16 +26,7 @@
           <p>You can add any book!</p>
           <button type="button"> <a href="/users/<%=user._id%>/books/new/">Add a new book</a></button>
         </div>
-        <div class="col">
-          <% books.forEach((book) => { %>
-            <div class="card">
-              <a href="/users/<%= user._id %>/books/<%= book._id %>">
-                <%= book.name %>
-                <img class="images" src="<%= book.addImg %>" alt="<%= book.name %>">
-              </a>
-            </div>
-          <% }) %>
-        </div>
+        
       </div>
     </div>
   </body>

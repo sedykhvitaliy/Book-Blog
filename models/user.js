@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema({
     required: true,
   },
   bio: String,
-  books: { type: [bookSchema], default: [] },
+  list: [bookSchema],
 });
 
 const User = mongoose.model('User', userSchema);

@@ -8,7 +8,6 @@ const morgan = require('morgan');
 const path = require("path");
 const session = require('express-session');
 const booksRouter = require('./controllers/books');
-app.use('/users/:userId/books', booksRouter);
 const usersController = require('./controllers/users.js');
 const authController = require('./controllers/auth.js');
 const isSignedIn = require('./middleware/is-signed-in.js');
@@ -28,7 +27,7 @@ mongoose.connection.on('connected', () => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-app.use('/users/:userId/books', booksRouter);
+
 
 app.use(morgan('dev'));
 app.use(
@@ -39,33 +38,38 @@ app.use(
   })
 );
 
+
 app.use(passUserToView);
 
-
-
-app.get('/home', (req, res) => {
-  res.render('index.ejs', {
-    user: req.session.user,
-  });
+app.get('/', (req, res) => {
+  // Check if the user is logged in
+  if (req.session.user) {
+    // Redirect logged-in users to their applications index
+    res.redirect(`/users/${req.session.user._id}/books`);
+  } else {
+    // Show the homepage for users who are not logged in
+    res.render('index.ejs');
+  }
 });
 
-app.get('/books', async (req, res) => {
-  const currentUser = await User.findById(req.session.user._id);
-  res.render('books/index.ejs', {
-    books: currentUser.books,
-    user: currentUser,
-  });
-});
+// app.get('/books', async (req, res) => {
+//   const currentUser = await User.findById(req.session.user._id);
+//   res.render('books/index.ejs', {
+//     books: currentUser.books,
+//     user: currentUser,
+//   });
+// });
 
 app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 
 
 
-app.use(passUserToView);
+
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/', usersController);
+app.use('/users/:userId/books', booksRouter);
 
 
 app.listen(port, () => {
