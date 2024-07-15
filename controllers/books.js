@@ -49,7 +49,7 @@ router.get('/:bookId', async (req, res) => {
     }
 });
 
-router.post('/books', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
         currentUser.list.push(req.body);

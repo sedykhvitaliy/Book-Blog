@@ -14,6 +14,8 @@ const authController = require('./controllers/auth.js');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const User = require('./models/user.js');
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 const port = process.env.PORT ? process.env.PORT : '4000';

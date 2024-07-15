@@ -8,17 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <div class="navbar">
-        <nav>
-          <ul>
-            <li>
-              
-
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <nav class="links">
+      <a href="/home">Home</a>
+      <% if (user) { %>
+        <a href="/books">View All Books</a>
+        <a href="/users/<%= user._id %>/books">My Books</a>
+        <a href="/auth/sign-out">Sign Out</a>
+      <% } else { %>
+        <a href="/auth/sign-in">Sign In</a>
+        <a href="/auth/sign-up">Sign Up</a>
+        <a href="/">All Books</a>
+      <% } %>
+    </nav>
       <div class="row">
         <div class="col">
           <h1>My List</h1>

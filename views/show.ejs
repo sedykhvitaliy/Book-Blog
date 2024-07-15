@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/comunity-page.css" />
+  <link rel="stylesheet" href="/public/stylesheets/comunity-page.css" />
   <title>Users List - Our Community</title>
 </head>
 <body>
-  <% include('../partials/_navbar.ejs') %>
+  <nav class="links">
+    <a href="/home">Home</a>
+    <% if (user) { %>
+      <a href="/books">View All Books</a>
+      <a href="/users/<%= user._id %>/books">My Books</a>
+      <a href="/auth/sign-out">Sign Out</a>
+    <% } else { %>
+      <a href="/auth/sign-in">Sign In</a>
+      <a href="/auth/sign-up">Sign Up</a>
+      <a href="/">All Books</a>
+    <% } %>
+  </nav>
   <h1>Community Page</h1>
   <ul>
     <% users.list.forEach(user => { %>
