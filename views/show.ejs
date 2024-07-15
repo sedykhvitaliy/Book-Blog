@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/comunity-page.css" />
+  <title>Users List - Our Community</title>
+</head>
+<body>
+  <% include('../partials/_navbar.ejs') %>
+  <h1>Community Page</h1>
+  <ul>
+    <% users.list.forEach(user => { %>
+      <li>
+        <p><%= user.name %></p>
+        <p ><%= user.bio %></p> 
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

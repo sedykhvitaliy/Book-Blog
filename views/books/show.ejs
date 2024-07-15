@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/public/stylesheets/show.css" />
+  <title><%= book.name %></title>
+</head>
+<body>
+
+
+<div class="card">
+  <img src="" class="card-img" alt="">
+  <div class="card-body">
+    <h1 class="card-title"><%= book.name %></h1>
+
+    <p class="card-info" class="card-sub-title">Name: <%=book.name %></p>
+    <p class="card-info" class="card-sub-title">descriptions: <%=book.descriptions %></p>
+    <p class="card-info" class="card-sub-title">year: <%=book.year %></p>
+    <p class="card-info" class="card-sub-title">author: <%=book.author %></p>
+      
+
+    <button class="card-btn">
+    <a href="/users/<%= user._id %>/books/<%= book._id %>/edit">
+      Edit
+    </a></button>
+
+
+    <form
+     action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE"method="POST">
+    <button class="card-btn" type="submit" title="submit">Delete</button>
+    </form>
+
+    <%- include('../partials/navbar.ejs') %>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  <body>
+  <%- include('../partials/_navbar.ejs') %>
+  
+ 
+  
