@@ -9,9 +9,9 @@ router.get("/", async (req, res) => {
   });
 
 
-  router.get("/:userId", async (req, res) => {
-    const foundUser = await User.findById(req.params.userId);
-    res.render("users/show.ejs", { users: foundUser });
+router.get("/:userId", async (req, res) => {
+  const foundUser = await User.findById(req.params.userId);
+  res.render("users/show.ejs", { users: foundUser });
   });
 
 module.exports = router;

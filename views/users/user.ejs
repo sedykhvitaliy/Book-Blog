@@ -7,23 +7,11 @@
     <title>User Home</title>
 </head>
 <body>
-    <nav class="links">
-        <a href="/home">Home</a>
-        <% if (user) { %>
-          <a href="/books">View All Books</a>
-          <a href="/users/<%= user._id %>/books">My Books</a>
-          <a href="/auth/sign-out">Sign Out</a>
-        <% } else { %>
-          <a href="/auth/sign-in">Sign In</a>
-          <a href="/auth/sign-up">Sign Up</a>
-          <a href="/">All Books</a>
-        <% } %>
-      </nav>
     <div class="container">
-        <div class="navbar">
-            
+        <div class="navbar">     
         </div>
         <div class="header">
+            <%- include('../partials/_navbar.ejs') %>
             <h1>Welcome, <%= user.username %>!</h1>
             <button class="add-book-btn">
                 <a href="/users/<%= user._id %>/books/new">Add a New Book</a>

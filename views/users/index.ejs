@@ -1,52 +1,30 @@
-<!--dons do this -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/stylesheets/style.css" />
-  <title>Home Page</title>
+  <link rel="stylesheet" href="/stylesheets/comunity-page.css" />
+  <title>Our Community</title>
 </head>
 <body>
-  <nav class="links">
-    <a href="/home">Home</a>
-    <% if (user) { %>
-      <a href="/books">View All Books</a>
-      <a href="/users/<%= user._id %>/books">My Books</a>
-      <a href="/auth/sign-out">Sign Out</a>
-    <% } else { %>
-      <a href="/auth/sign-in">Sign In</a>
-      <a href="/auth/sign-up">Sign Up</a>
-      <a href="/">All Books</a>
-    <% } %>
-  </nav>
-  <div class="container">
-    
-    <div class="wrapper">
-
-      <% if (user) { %>
-       
-        <meta http-equiv="refresh" content="0; /userhome"/>
+  
+  <% include('../partials/_navbar.ejs') %>
+  <div class="box">
+    <h2>Community Page</h2>
+  <ul>
+    <% users.forEach(user => { %>
+      <% include('../partials/_navbar.ejs') %>
+      <li>
+        <a href="/<%= user._id %>"><%= user.username %></a>
+        <a href="/<%= user._id %>"><%= user.list.name %></a> 
+      </li>
       
-          
-      <% } else { %>
-          <h1>Welcome to Book Blog</h1>
-          <div class="first">
-            <form  action="/auth/sign-up" method="GET">
-              <button class="btn">Sign up</button>
-            </form>
-          </div>
-          
-            <div class="first">
-              <form action="/auth/sign-in" method="GET">
-                <button class="btn">Sign in</button>
-              </form>
-            </div>
-            
-      <% } %>
-          
-       </div> 
-    </div>
-  </div>
+    <% }); %>
+  </ul>
+  <div class="btn">
+  <a href="/home">Home</a>
+</div>
+</div>  
 </body>
 </html>

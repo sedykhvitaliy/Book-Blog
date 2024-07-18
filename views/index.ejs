@@ -3,38 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Home Page</title>
 </head>
 <body>
-  <nav class="links">
-    <a href="/home">Home</a>
-    <% if(user) { %>
-      <a href="/books">View All Books</a>
-      <a href="/users/<%=user._id%>/books">My Books</a>
-      <a href="/auth/sign-out">Sign Out</a>
-    <% } else { %>
-      <a href="/auth/sign-in">Sign In</a>
-      <a href="/auth/sign-up">Sign Up</a>
-      <a href="/">All Books</a>
-    <% } %>
-  </nav>
-  
   <div class="container">
-    <h1>Welcome to Book Blog</h1>
-    <div class="first">
-      <form action="/auth/sign-up" method="GET">
-        <button class="btn">Sign up</button>
-      </form>
+    <div class="wrapper">
+      <% if (user) { %>
+        <meta http-equiv="refresh" content="0; /userhome"/>
+          
+      <% } else { %>
+        
+          <h1>Welcome to Book Blog</h1>
+          <div class="first">
+            <form  action="/auth/sign-up" method="GET">
+              <button class="btn">Sign up</button>
+            </form>
+          </div>
+          
+            <div class="first">
+              <form action="/auth/sign-in" method="GET">
+                <button class="btn">Sign in</button>
+              </form>
+            </div>
+      <% } %>
     </div>
-    <div class="first">
-      <form action="/auth/sign-in" method="GET">
-        <button class="btn">Sign in</button>
-      </form>
-    
-      
-    </div>
-    
   </div>
 </body>
 </html>

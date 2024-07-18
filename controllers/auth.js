@@ -14,7 +14,7 @@ router.get('/sign-in', (req, res) => {
 
 router.get('/sign-out', (req, res) => {
   req.session.destroy();
-  res.redirect('/');
+  res.redirect('/home');
 });
 
 router.post('/sign-up', async (req, res) => {
@@ -40,7 +40,7 @@ router.post('/sign-up', async (req, res) => {
     res.redirect('/auth/sign-in');
   } catch (error) {
     console.log(error);
-    res.redirect('/');
+    res.redirect('/home');
   }
 });
 
@@ -66,10 +66,10 @@ router.post('/sign-in', async (req, res) => {
       _id: userInDatabase._id
     };
   
-    res.redirect('/');
+    res.redirect('/userhome');
   } catch (error) {
     console.log(error);
-    res.redirect('/');
+    res.redirect('/userhome');
   }
 });
 
