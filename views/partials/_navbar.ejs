@@ -1,8 +1,14 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/navbar.css" />
+</head>
+
+
 <nav class="links">
   <a href="/home">Home</a>
   <% if(user) { %>
-    <a href="/books">View All Books</a>
     <a href="/users/<%=user._id%>/books">My Books</a>
+    <a href="/users/<%=user._id%>/books/new">Add a New Book</a>
+    <a href="/">All Users</a>
     <a href="/auth/sign-out">Sign Out</a>
   <% } else { %>
     <a href="/auth/sign-in">Sign In</a>

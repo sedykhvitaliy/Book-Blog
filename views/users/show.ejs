@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/users.css" />
+  <link rel="stylesheet" href="/stylesheets/navbar.css" />
+  <title>User - Books</title>
+</head>
+<body>
+  <div class="container">
+    
+    <h1 class="page-title"><%= users.username %>'s Books</h1>
+    <div class="books-list">
+      
+        <% users.list.forEach(user => { %>
+          <div class="book-card">
+            <h2 class="book-title"><%= user.name %></h2>
+            <p class="book-description"><strong>Description:</strong> <%= user.descriptions %></p>
+            <p class="book-year"><strong>Year:</strong> <%= user.year %></p>
+            <p class="book-author"><strong>Author:</strong> <%= user.author %></p>
+          </div>
+        <% }); %>
+      
+    </div>
+    
+  </div>
+  <div class="btn">
+    <a href="/">Back</a>
+  </div>
+</body>
+</html>

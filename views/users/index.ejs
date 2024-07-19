@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,6 @@
     <h2>Community Page</h2>
   <ul>
     <% users.forEach(user => { %>
-      <% include('../partials/_navbar.ejs') %>
       <li>
         <a href="/<%= user._id %>"><%= user.username %></a>
         <a href="/<%= user._id %>"><%= user.list.name %></a> 

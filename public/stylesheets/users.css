@@ -1,0 +1,79 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .page-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .books-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .book-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+  }
+
+  .book-title {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: #333;
+  }
+
+  .book-description {
+    margin: 10px 0;
+    color: #555;
+    font-size: 1em;
+  }
+ 
+  .book-year {
+    margin: 10px 0;
+    color: #555;
+    font-size: 1em;
+  }
+
+  .book-author {
+    margin: 10px 0;
+    color: #555;
+    font-size: 1em;
+  }
+
+  .no-books {
+    text-align: center;
+    font-size: 1.2em;
+    color: #888;
+  }
+  
+
+  .btn {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn a:hover {
+    background-color: #575757;
+}

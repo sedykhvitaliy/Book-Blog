@@ -32,7 +32,7 @@ app.use(
   })
 );
 
-app.get('/favicon.ico', (req, res) => res.send(''));  //https://stackoverflow.com/questions/43016478/casterror-cast-to-objectid-failed-for-value-favicon-ico-at-path-id-for-mod  last answer
+app.get('/favicon.ico', (req, res) => res.send(''));  
 
 app.get('/home', (req, res) => {
   res.render('index.ejs', {
@@ -54,6 +54,7 @@ app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/', usersController);
 app.use('/users/:userId/books',booksController);
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

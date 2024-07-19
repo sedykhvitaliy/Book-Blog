@@ -3,40 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/stylesheets/user.css" />
+    <link rel="stylesheet" href="/stylesheets/user.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
     <title>User Home</title>
 </head>
 <body>
     <div class="container">
         <div class="navbar">     
-        </div>
-        <div class="header">
             <%- include('../partials/_navbar.ejs') %>
-            <h1>Welcome, <%= user.username %>!</h1>
-            <button class="add-book-btn">
-                <a href="/users/<%= user._id %>/books/new">Add a New Book</a>
-            </button>
         </div>
+
         <div class="books-list">
             <% if (user.list.length > 0) { %>
                 <% user.list.forEach(book => { %>
                     <div class="book-card">
-                        <a href="/users/<%= user._id %>/books/<%= book._id %>">
-                            <h2><%= book.name %></h2>
-                            <img src="<%= book.addImg %>" alt="<%= book.name %>">
-                        </a>
+                        <h2><%= book.name %></h2>
                         <div class="book-actions">
                             <button class="edit-btn">
                                 <a href="/users/<%= user._id %>/books/<%= book._id %>/edit">Edit</a>
                             </button>
-                            <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE" method="POST">
+                            <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
                                 <button class="delete-btn" type="submit">Delete</button>
                             </form>
                         </div>
                     </div>
                 <% }); %>
             <% } else { %>
-                <p>You have no books. Add a new book to get started!</p>
+                <p>No books found.</p>
             <% } %>
         </div>
     </div>

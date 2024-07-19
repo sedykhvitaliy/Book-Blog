@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/add-book.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
     <title>Add a New Book</title>
 </head>
 <body>
-    
-    <h1>Add a New Book</h1>
     <form action="/users/<%=user._id%>/books" method="POST">
         <label for="name">Book Name:</label>
         <input type="text" name="name" id="name" required />
@@ -17,6 +17,8 @@
         <input type="text" name="year" id="year" />
         <label for="author">Author:</label>
         <input type="text" name="author" id="author" />
+        
+        <a href="/users/<%=user._id%>/books" class="button-back">Back</a>
         <button type="submit">Add Book</button>
     </form>
 </body>

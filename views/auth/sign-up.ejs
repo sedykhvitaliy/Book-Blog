@@ -3,22 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/public/stylesheets/sign-up.css" />
+  <link rel="stylesheet" href="/stylesheets/sign-up.css" />
+  <link rel="stylesheet" href="/stylesheets/navbar.css" />
   <title>Sign Up</title>
 </head>
 <body>
-  <nav class="links">
-    <a href="/home">Home</a>
-    <% if (user) { %>
-      <a href="/books">View All Books</a>
-      <a href="/users/<%= user._id %>/books">My Books</a>
-      <a href="/auth/sign-out">Sign Out</a>
-    <% } else { %>
-      <a href="/auth/sign-in">Sign In</a>
-      <a href="/auth/sign-up">Sign Up</a>
-      <a href="/">All Books</a>
-    <% } %>
-  </nav>
+
 <div class="box">
   <form action="/auth/sign-up" method="POST">
   <h1>Create a new account!</h1>
@@ -32,16 +22,16 @@
     
     <div class="inputBox">
     <input type="password" name="password" id="password" required="required" />
-    <span>password</span>
+    <span>Password</span>
     <i></i>
     </div>
     
     <div class="inputBox">
     <input type="password" name="confirmPassword" id="confirmPassword" required="required"/>
-    <span>confirmPassword</span>
+    <span>Password again</span>
     <i></i>
     </div>
-    <input type="submit" value="sign-up">Sign up
+    <input type="submit" value="Sign Up">
   </form>
 </body>
 </html>

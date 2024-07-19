@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/public/stylesheets/show.css" />
+  <link rel="stylesheet" href="/stylesheets/show.css" />
+  <link rel="stylesheet" href="/stylesheets/navbar.css" />
   <title><%= book.name %></title>
 </head>
 <body>
   <nav class="links">
     <a href="/home">Home</a>
     <% if (user) { %>
-      <a href="/books">View All Books</a>
       <a href="/users/<%= user._id %>/books">My Books</a>
       <a href="/auth/sign-out">Sign Out</a>
     <% } else { %>
@@ -46,28 +46,5 @@
 
   </div>
 </div>
-
-
-
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--  <body>
-  <%- include('../partials/_navbar.ejs') %>
-  
- 
-  
+</html>  
