@@ -54,10 +54,10 @@ You can view the live app [here]().
 
 ## Attributions
 
-- **MDN: ** [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS) - CSS formating.
-- **EJS: ** [https://www.npmjs.com/package/ejs](https://www.npmjs.com/package/ejs) - Templating engine for rendering HTML.
-- **Bug-fix: **[StackOverflow](https://stackoverflow.com/questions/43016478/casterror-cast-to-objectid-failed-for-value-favicon-ico-at-path-id-for-mod) - Last answer.
-- **CSS-function: **[StackOverflow](https://stackoverflow.com/questions/72632874/keep-focus-on-input-text-after-clicking-somewhere-else) - Part of the code.
+- **MDN:** [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS) - CSS formating.
+- **EJS:** [https://www.npmjs.com/package/ejs](https://www.npmjs.com/package/ejs) - Templating engine for rendering HTML.
+- **Bug-fix:**[StackOverflow](https://stackoverflow.com/questions/43016478/casterror-cast-to-objectid-failed-for-value-favicon-ico-at-path-id-for-mod) - Last answer.
+- **CSS-function:**[StackOverflow](https://stackoverflow.com/questions/72632874/keep-focus-on-input-text-after-clicking-somewhere-else) - Part of the code.
 
 
 ## Technologies Used
