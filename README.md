@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![App Screenshot](https://imgur.com/a/WMIR9pM)  
+![ScreenShot](https://i.imgur.com/1KGGwil.png)  
 
 ## App Description
 
